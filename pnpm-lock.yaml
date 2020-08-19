@@ -6,6 +6,7 @@ dependencies:
   pg: 8.3.2_pg@8.3.2
   reflect-metadata: 0.1.13
   response-time: 2.3.2
+  typedi: 0.8.0
   typeorm: 0.2.25
 devDependencies:
   '@types/cors': 2.8.7
@@ -2672,6 +2673,10 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==
+  /typedi/0.8.0:
+    dev: false
+    resolution:
+      integrity: sha512-/c7Bxnm6eh5kXx2I+mTuO+2OvoWni5+rXA3PhXwVWCtJRYmz3hMok5s1AKLzoDvNAZqj/Q/acGstN0ri5aQoOA==
   /typeorm/0.2.25:
     dependencies:
       app-root-path: 3.0.0
@@ -2903,5 +2908,6 @@ specifiers:
   response-time: ^2.3.2
   rimraf: ^3.0.2
   ts-node-dev: ^1.0.0-pre.58
+  typedi: ^0.8.0
   typeorm: ^0.2.25
   typescript: ^3.9.7
