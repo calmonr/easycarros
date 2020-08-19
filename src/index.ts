@@ -1,4 +1,4 @@
-/// <reference path="../types/env.d.ts" />
+/// <reference path="../typings/env.d.ts" />
 
 import 'reflect-metadata'
 import consola from 'consola'
