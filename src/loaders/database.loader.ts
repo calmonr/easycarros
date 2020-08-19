@@ -7,6 +7,7 @@ import {
 } from 'typeorm'
 
 import { User } from '../modules/user/user.entity'
+import { Partner } from '../modules/partner/partner.entity'
 
 const {
   DATABASE_HOST,
@@ -25,7 +26,7 @@ const options: ConnectionOptions = {
   type: 'postgres',
   synchronize: true,
   logging: true,
-  entities: [User]
+  entities: [User, Partner]
 }
 
 export default (): Promise<Connection> => {
