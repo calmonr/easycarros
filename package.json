@@ -20,6 +20,11 @@
     "url": "https://github.com/calmonr/easycarros/issues"
   },
   "homepage": "https://github.com/calmonr/easycarros#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "consola": "^2.15.0"
   },
@@ -30,6 +35,8 @@
     "eslint": "^7.7.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
     "ts-node-dev": "^1.0.0-pre.58",
