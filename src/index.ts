@@ -1,3 +1,3 @@
-import consola from "consola";
+import consola from 'consola'
 
-consola.success("Easy Carros Challenge");
+consola.success('Easy Carros Challenge')
