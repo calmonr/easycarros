@@ -10,6 +10,8 @@ import {
 import { Point } from 'geojson'
 import { Exclude, Transform } from 'class-transformer'
 
+import { ServiceType } from '../../types/service.type'
+
 @Entity({
   name: 'partners'
 })
@@ -22,7 +24,7 @@ export class Partner extends BaseEntity {
   name!: string
 
   @Column('text', { array: true })
-  services!: string[]
+  services!: ServiceType[]
 
   @Transform(value => [...value.coordinates], { toPlainOnly: true })
   @Column('geometry', {

@@ -4,6 +4,7 @@ import { Repository } from 'typeorm'
 import { Point } from 'geojson'
 
 import { Partner } from './partner.entity'
+import { ServiceType } from '../../types/service.type'
 import { CoordinatesType } from '../../types/coordinates.type'
 import { forwardGeocode } from '../../utils/geocoder'
 
@@ -38,7 +39,7 @@ export class PartnerService {
   }
 
   async findByService(
-    service: string,
+    service: ServiceType,
     coordinates: CoordinatesType,
     distance: number
   ): Promise<Partner | undefined> {
