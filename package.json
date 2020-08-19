@@ -26,6 +26,8 @@
     }
   },
   "dependencies": {
+    "argon2": "^0.27.0",
+    "body-parser": "^1.19.0",
     "consola": "^2.15.0",
     "cors": "^2.8.5",
     "dotenv-defaults": "^2.0.0",
@@ -34,7 +36,8 @@
     "reflect-metadata": "^0.1.13",
     "response-time": "^2.3.2",
     "typedi": "^0.8.0",
-    "typeorm": "^0.2.25"
+    "typeorm": "^0.2.25",
+    "typeorm-typedi-extensions": "^0.2.3"
   },
   "devDependencies": {
     "@types/cors": "^2.8.7",
