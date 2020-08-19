@@ -8,7 +8,11 @@
     "lint": "eslint */**/*.{js,ts} --quiet --fix",
     "build": "rimraf build && tsc",
     "start": "node -r dotenv-defaults/config build",
-    "start:dev": "tsnd -r dotenv-defaults/config --respawn src"
+    "start:dev": "tsnd -r dotenv-defaults/config --respawn src",
+    "cli:typeorm": "ts-node node_modules/typeorm/cli.js -f src/database/config.ts",
+    "migration:gen": "pnpm cli:typeorm -- migration:generate -n",
+    "migration:run": "pnpm cli:typeorm -- migration:run",
+    "migration:rev": "pnpm cli:typeorm -- migration:revert"
   },
   "repository": {
     "type": "git",
@@ -62,6 +66,7 @@
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
+    "ts-node": "^8.10.2",
     "ts-node-dev": "^1.0.0-pre.58",
     "typescript": "^3.9.7"
   }
