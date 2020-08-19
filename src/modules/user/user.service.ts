@@ -11,6 +11,10 @@ export class UserService {
   @InjectRepository(User)
   private repository!: Repository<User>
 
+  async findByEmail(email: string): Promise<User | undefined> {
+    return this.repository.findOne({ email })
+  }
+
   async create({ name, email, password }: UserCreateDTO): Promise<User> {
     const hashedPassword = await hash(password)
 

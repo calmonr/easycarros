@@ -32,6 +32,8 @@
     "cors": "^2.8.5",
     "dotenv-defaults": "^2.0.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "ms": "^2.1.2",
     "pg": "^8.3.2",
     "reflect-metadata": "^0.1.13",
     "response-time": "^2.3.2",
@@ -42,6 +44,8 @@
   "devDependencies": {
     "@types/cors": "^2.8.7",
     "@types/express": "^4.17.7",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/ms": "^0.7.31",
     "@types/node": "^14.6.0",
     "@types/response-time": "^2.3.4",
     "@typescript-eslint/eslint-plugin": "^3.9.1",
