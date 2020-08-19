@@ -1,3 +1,5 @@
+/// <reference path="../types/env.d.ts" />
+
 import consola from 'consola'
 
-consola.success('Easy Carros Challenge')
+consola.success(process.env.APPLICATION_NAME)

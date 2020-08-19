@@ -7,8 +7,8 @@
   "scripts": {
     "lint": "eslint */**/*.{js,ts} --quiet --fix",
     "build": "rimraf build && tsc",
-    "start": "node build",
-    "start:dev": "tsnd --respawn src"
+    "start": "node -r dotenv-defaults/config build",
+    "start:dev": "tsnd -r dotenv-defaults/config --respawn src"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,8 @@
     }
   },
   "dependencies": {
-    "consola": "^2.15.0"
+    "consola": "^2.15.0",
+    "dotenv-defaults": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^14.6.0",

@@ -1,5 +1,6 @@
 {
   "files.associations": {
-    ".lintstagedrc": "json"
+    ".lintstagedrc": "json",
+    ".env.defaults": "dotenv"
   }
 }
