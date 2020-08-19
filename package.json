@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "name": "easycarros",
+  "version": "1.0.0",
+  "description": "Tudo o que seu automóvel precisa, sem você sair de casa.",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf build && tsc",
+    "start": "node build",
+    "start:dev": "tsnd --respawn src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calmonr/easycarros.git"
+  },
+  "author": "Calmon Ribeiro <calmonrib@gmail.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/calmonr/easycarros/issues"
+  },
+  "homepage": "https://github.com/calmonr/easycarros#readme",
+  "dependencies": {
+    "consola": "^2.15.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.6.0",
+    "rimraf": "^3.0.2",
+    "ts-node-dev": "^1.0.0-pre.58",
+    "typescript": "^3.9.7"
+  }
+}
