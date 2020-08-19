@@ -8,5 +8,6 @@ declare namespace NodeJS {
     DATABASE_USERNAME: string
     DATABASE_PASSWORD: string
     DATABASE_NAME: string
+    OPENCAGE_API: string
   }
 }

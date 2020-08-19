@@ -23,4 +23,17 @@ router.post('/by-service', async ({ body: { service, coodinates } }, res) => {
   })
 })
 
+router.post('/by-address', async ({ body: { address } }, res) => {
+  const partnerService = Container.get(PartnerService)
+
+  // in meters: 10km
+  const distance = 10000
+
+  const partners = await partnerService.findByAddress(address, distance)
+
+  return res.json({
+    partners: classToPlain(partners) || {}
+  })
+})
+
 export default router

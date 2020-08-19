@@ -5,6 +5,7 @@ import { Point } from 'geojson'
 
 import { Partner } from './partner.entity'
 import { CoordinatesType } from '../../types/coordinates.type'
+import { forwardGeocode } from '../../utils/geocoder'
 
 @Service()
 export class PartnerService {
@@ -46,5 +47,16 @@ export class PartnerService {
       .getOne()
 
     return partner
+  }
+
+  async findByAddress(address: string, distance: number): Promise<Partner[]> {
+    const coordinates = await forwardGeocode(address)
+
+    const partners = await this.closestByRadiusQuery(
+      coordinates,
+      distance
+    ).getMany()
+
+    return partners || []
   }
 }
