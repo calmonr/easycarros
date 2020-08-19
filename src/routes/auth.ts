@@ -31,7 +31,7 @@ router.post('/login', async ({ body: { email, password } }, res) => {
     })
   }
 
-  const { id: userId, password: userPassword } = user
+  const { id, password: userPassword } = user
 
   const verified = await verify(userPassword, password)
 
@@ -41,9 +41,9 @@ router.post('/login', async ({ body: { email, password } }, res) => {
     })
   }
 
-  const { expiresIn, token } = generateJWT(userId)
+  const { token } = generateJWT({ id }, '1h')
 
-  return res.json({ expiresIn, token })
+  return res.json({ token })
 })
 
 export default router
