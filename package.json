@@ -8,7 +8,17 @@
     "lint": "eslint */**/*.{js,ts} --quiet --fix",
     "build": "rimraf build && tsc",
     "start": "node -r dotenv-defaults/config build",
-    "start:dev": "tsnd -r dotenv-defaults/config --respawn src"
+    "start:dev": "tsnd -r dotenv-defaults/config --respawn src",
+    "cli:typeorm": "ts-node node_modules/typeorm/cli.js -f src/database/config",
+    "cli:seeding": "ts-node node_modules/typeorm-seeding/dist/cli.js -n src/database/config",
+    "migration:gen": "pnpm cli:typeorm -- migration:generate -n",
+    "migration:run": "pnpm cli:typeorm -- migration:run",
+    "migration:rev": "pnpm cli:typeorm -- migration:revert",
+    "schema:drop": "pnpm cli:typeorm -- schema:drop",
+    "schema:sync": "pnpm cli:typeorm -- schema:sync",
+    "schema:log": "pnpm cli:typeorm -- schema:log",
+    "seed:run": "pnpm cli:seeding -- seed",
+    "seed:config": "pnpm cli:seeding -- config"
   },
   "repository": {
     "type": "git",
@@ -26,14 +36,33 @@
     }
   },
   "dependencies": {
+    "argon2": "^0.27.0",
+    "body-parser": "^1.19.0",
+    "class-transformer": "^0.3.1",
     "consola": "^2.15.0",
+    "cors": "^2.8.5",
     "dotenv-defaults": "^2.0.0",
     "express": "^4.17.1",
-    "response-time": "^2.3.2"
+    "express-jwt": "^6.0.0",
+    "geojson": "^0.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "node-geocoder": "^3.27.0",
+    "pg": "^8.3.2",
+    "reflect-metadata": "^0.1.13",
+    "response-time": "^2.3.2",
+    "typedi": "^0.8.0",
+    "typeorm": "^0.2.25",
+    "typeorm-seeding": "^1.6.1",
+    "typeorm-typedi-extensions": "^0.2.3"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.7",
     "@types/express": "^4.17.7",
+    "@types/express-jwt": "^0.0.42",
+    "@types/geojson": "^7946.0.7",
+    "@types/jsonwebtoken": "^8.5.0",
     "@types/node": "^14.6.0",
+    "@types/node-geocoder": "^3.24.1",
     "@types/response-time": "^2.3.4",
     "@typescript-eslint/eslint-plugin": "^3.9.1",
     "@typescript-eslint/parser": "^3.9.1",
@@ -44,6 +73,7 @@
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
+    "ts-node": "^8.10.2",
     "ts-node-dev": "^1.0.0-pre.58",
     "typescript": "^3.9.7"
   }
