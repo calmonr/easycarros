@@ -8,7 +8,17 @@
     "lint": "eslint */**/*.{js,ts} --quiet --fix",
     "build": "rimraf build && tsc",
     "start": "node -r dotenv-defaults/config build",
-    "start:dev": "tsnd -r dotenv-defaults/config --respawn src"
+    "start:dev": "tsnd -r dotenv-defaults/config --respawn src",
+    "cli:typeorm": "ts-node node_modules/typeorm/cli.js -f src/database/config",
+    "cli:seeding": "ts-node node_modules/typeorm-seeding/dist/cli.js -n src/database/config",
+    "migration:gen": "pnpm cli:typeorm -- migration:generate -n",
+    "migration:run": "pnpm cli:typeorm -- migration:run",
+    "migration:rev": "pnpm cli:typeorm -- migration:revert",
+    "schema:drop": "pnpm cli:typeorm -- schema:drop",
+    "schema:sync": "pnpm cli:typeorm -- schema:sync",
+    "schema:log": "pnpm cli:typeorm -- schema:log",
+    "seed:run": "pnpm cli:seeding -- seed",
+    "seed:config": "pnpm cli:seeding -- config"
   },
   "repository": {
     "type": "git",
@@ -42,6 +52,7 @@
     "response-time": "^2.3.2",
     "typedi": "^0.8.0",
     "typeorm": "^0.2.25",
+    "typeorm-seeding": "^1.6.1",
     "typeorm-typedi-extensions": "^0.2.3"
   },
   "devDependencies": {
@@ -62,6 +73,7 @@
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
+    "ts-node": "^8.10.2",
     "ts-node-dev": "^1.0.0-pre.58",
     "typescript": "^3.9.7"
   }
