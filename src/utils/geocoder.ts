@@ -14,7 +14,7 @@ export const forwardGeocode = async (
 ): Promise<CoordinatesType> => {
   const [first] = await geocoder.geocode(address)
 
-  const { longitude = 0, latitude = 0 } = first
+  const { longitude = 0, latitude = 0 } = first || { longitude: 0, latitude: 0 }
 
   return { longitude, latitude }
 }
