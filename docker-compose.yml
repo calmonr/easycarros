@@ -2,7 +2,7 @@ version: '3'
 
 services:
   postgres:
-    image: postgis/postgis
+    image: postgis/postgis:12-3.0-alpine
     ports:
       - ${DATABASE_PORT}:${DATABASE_PORT}
     environment:
