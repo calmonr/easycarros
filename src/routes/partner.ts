@@ -19,7 +19,7 @@ router.post('/by-service', async ({ body: { service, coodinates } }, res) => {
   )
 
   return res.json({
-    closest: classToPlain(partner) || {}
+    closest: classToPlain(partner) || 'There are no professionals available.'
   })
 })
 
