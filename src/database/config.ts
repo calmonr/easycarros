@@ -1,4 +1,5 @@
 /// <reference path="../../typings/env.d.ts" />
+/// <reference path="../../typings/opencage-api-client.d.ts" />
 
 export = {
   type: 'postgres',
