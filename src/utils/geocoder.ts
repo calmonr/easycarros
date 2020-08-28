@@ -1,20 +1,19 @@
-import Geocoder from 'node-geocoder'
+import { geocode } from 'opencage-api-client'
 
 import { CoordinatesType } from '../types/coordinates.type'
 
 const { OPENCAGE_API } = process.env
 
-const geocoder = Geocoder({
-  provider: 'opencage',
-  apiKey: OPENCAGE_API
-})
-
 export const forwardGeocode = async (
   address: string
 ): Promise<CoordinatesType> => {
-  const [first] = await geocoder.geocode(address)
+  const {
+    results: [first]
+  } = await geocode({ q: address, key: OPENCAGE_API })
 
-  const { longitude = 0, latitude = 0 } = first || { longitude: 0, latitude: 0 }
+  const {
+    geometry: { lng: longitude, lat: latitude }
+  } = first || { geometry: { lng: 0, lat: 0 } }
 
   return { longitude, latitude }
 }
